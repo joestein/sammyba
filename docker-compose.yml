@@ -1,0 +1,10 @@
+services:
+  ui:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - DUCKDB_PATH=/app/fantasy.duckdb
+    volumes:
+      - ./fantasy.duckdb:/app/fantasy.duckdb
+    restart: unless-stopped
